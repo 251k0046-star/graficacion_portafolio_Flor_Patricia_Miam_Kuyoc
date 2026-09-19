@@ -44,11 +44,7 @@ Ejemplo: Cambiar <a href="#"...> por <a href="https://editor.p5js.org/tu-usuario
 Guardar los cambios (Commit). Tu página web se actualizará sola en un par de minutos.
 ¿Cómo organizar tus códigos y actualizar el portafolio?
 Conforme avancemos en el semestre, crearemos carpetas específicas para guardar el código fuente de cada actividad de manera ordenada. Tu repositorio terminará viéndose así:
-
-graficacion-portafolio/
-│
-├── index.html           ◄— Tu portafolio (la página web principal)
-├── css/style.css       ◄— El diseño visual de tu portafolio
+s       ◄— El diseño visual de tu portafolio
 │
 ├── Unidad_1/            ◄— Carpeta para los códigos de la Unidad 1
 │   ├── AA_1.1_Primitivas/
@@ -58,6 +54,10 @@ graficacion-portafolio/
 │   └── AA_1.3_Animación/
 │   │   └── sketch.js    ◄— Aquí pegarás el código 
 │   └── AA_1.4_Reto/
+graficacion-portafolio/
+│
+├── index.html           ◄— Tu portafolio (la página web principal)
+├── css/style.cs
 │       └── sketch.js    ◄— Aquí pegarás el código 
 └── Unidad_2/            ◄— Carpeta para los códigos de la Unidad 2
     └── AA_2.1_Traslación/

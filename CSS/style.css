@@ -1,9 +1,11 @@
-/* css/styles.css */
+/* css/style.css */
 :root {
     --bg-color: #f4f6f9;
     --text-color: #333;
-    --primary-color: #1a5276;
+    --header-bg: #BD007B; 
+    --sidebar-bg: #D91192; 
     --card-bg: #ffffff;
+    --footer-bg: #F026A2; 
 }
 
 body {
@@ -12,51 +14,190 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--header-bg);
     color: white;
     padding: 2rem;
     text-align: center;
 }
 
+/* --- Layout Principal --- */
+.layout-container {
+    display: flex;
+    flex: 1;
+}
+
+/* --- Menú Lateral (Sidebar) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg); 
+    padding: 2rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-align: center;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    color: var(--header-bg);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar button:hover, .sidebar button.activo {
+    background-color: var(--header-bg);
+    color: white;
+    border: 2px solid white;
+}
+
+/* --- Área de Contenido Principal --- */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    flex: 1;
+    padding: 2.5rem;
+    max-width: 1200px;
 }
 
 .unidad-seccion {
-    margin-bottom: 3rem;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .grid-actividades {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
+/* --- Estilos de las Tarjetas --- */
 .tarjeta-actividad {
     background: var(--card-bg);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 6px solid var(--header-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; 
 }
 
+.tarjeta-actividad h3 {
+    margin-top: 0;
+    color: var(--header-bg);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Texto justificado */
+.tarjeta-actividad p {
+    flex-grow: 1; 
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: justify; 
+}
+
+/* --- Contenedor general de los botones (Horizontal y Lado a Lado) --- */
+.botones-container {
+    display: flex;
+    flex-direction: row; /* Coloca el icono y el botón en la misma línea */
+    align-items: center; /* Los alinea verticalmente */
+    justify-content: center; /* Si hay solo un elemento (como en 1.2.1), lo centra */
+    gap: 15px; /* Espacio entre el icono y el botón */
+    margin-top: auto; 
+    width: 100%;
+}
+
+/* Configuración del Icono del Libro (Font Awesome) */
+.btn-pdf {
+    display: inline-flex;
+    justify-content: center;
+    color: #A31771; /* Tu color rosa */
+    text-decoration: none;
+    font-size: 2.5rem; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-pdf:hover {
+    color: #791053; 
+    transform: scale(1.15); 
+}
+
+/* --- Botón Ver Evidencia --- */
 .btn-enlace {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
+    flex: 1; /* Esto hace que el botón ocupe todo el espacio sobrante empujando todo a la medida perfecta */
+    box-sizing: border-box;
+    display: block; 
+    padding: 1.2rem; 
+    background-color: var(--header-bg);
     color: white;
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-enlace:hover {
-    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(189, 0, 123, 0.4);
+}
+
+footer {
+    background-color: var(--footer-bg); 
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 800px) {
+    .layout-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+    .sidebar ul {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+    }
+    .sidebar li {
+        flex: 1;
+        margin-bottom: 0;
+    }
 }

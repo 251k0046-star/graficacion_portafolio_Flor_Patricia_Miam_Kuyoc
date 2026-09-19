@@ -1,4 +1,4 @@
-/* css/style.css */
+
 :root {
     --bg-color: #f4f6f9;
     --text-color: #333;
@@ -26,13 +26,13 @@ header {
     text-align: center;
 }
 
-/* --- Layout Principal --- */
+
 .layout-container {
     display: flex;
     flex: 1;
 }
 
-/* --- Menú Lateral (Sidebar) --- */
+
 .sidebar {
     width: 260px;
     background-color: var(--sidebar-bg); 
@@ -75,7 +75,7 @@ header {
     border: 2px solid white;
 }
 
-/* --- Área de Contenido Principal --- */
+
 main {
     flex: 1;
     padding: 2.5rem;
@@ -98,7 +98,7 @@ main {
     margin-top: 1.5rem;
 }
 
-/* --- Estilos de las Tarjetas --- */
+
 .tarjeta-actividad {
     background: var(--card-bg);
     border-radius: 12px;
@@ -117,7 +117,7 @@ main {
     text-align: center;
 }
 
-/* Texto justificado */
+
 .tarjeta-actividad p {
     flex-grow: 1; 
     font-size: 1.05rem;
@@ -125,22 +125,22 @@ main {
     text-align: justify; 
 }
 
-/* --- Contenedor general de los botones (Horizontal y Lado a Lado) --- */
+
 .botones-container {
     display: flex;
-    flex-direction: row; /* Coloca el icono y el botón en la misma línea */
-    align-items: center; /* Los alinea verticalmente */
-    justify-content: center; /* Si hay solo un elemento (como en 1.2.1), lo centra */
-    gap: 15px; /* Espacio entre el icono y el botón */
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
     margin-top: auto; 
     width: 100%;
 }
 
-/* Configuración del Icono del Libro (Font Awesome) */
+
 .btn-pdf {
     display: inline-flex;
     justify-content: center;
-    color: #A31771; /* Tu color rosa */
+    color: #A31771; /
     text-decoration: none;
     font-size: 2.5rem; 
     transition: transform 0.3s ease, color 0.3s ease;
@@ -151,9 +151,9 @@ main {
     transform: scale(1.15); 
 }
 
-/* --- Botón Ver Evidencia --- */
+
 .btn-enlace {
-    flex: 1; /* Esto hace que el botón ocupe todo el espacio sobrante empujando todo a la medida perfecta */
+    flex: 1; 
     box-sizing: border-box;
     display: block; 
     padding: 1.2rem; 
@@ -181,7 +181,7 @@ footer {
     margin-top: auto;
 }
 
-/* Responsivo para móviles */
+
 @media (max-width: 800px) {
     .layout-container {
         flex-direction: column;
